@@ -1,5 +1,6 @@
 package com.udacity.jwdnd.c1.review.service;
 
+import com.udacity.jwdnd.c1.review.mapper.ChatMessageMapper;
 import com.udacity.jwdnd.c1.review.model.ChatForm;
 import com.udacity.jwdnd.c1.review.model.ChatMessage;
 import org.springframework.stereotype.Service;
@@ -10,28 +11,17 @@ import java.util.List;
 
 @Service
 public class MessageService {
-    private List<ChatMessage> chatMessages;
+    //private List<ChatMessage> chatMessages; don#t need this now - just MessageMapper
+    private ChatMessageMapper chatMessageMapper;
 
-//
-//
-//    private String message;
-//
-//    public MessageService(String message) {
-//        this.message = message;
-//    }
-//
-//    public String uppercase() {
-//        return this.message.toUpperCase();
-//    }
-//
-//    public String lowercase() {
-//        return this.message.toLowerCase();
-//    }
+    public MessageService(ChatMessageMapper chatMessageMapper){
+        this.chatMessageMapper = chatMessageMapper;
+    }
 
     @PostConstruct
     public void postConstruct() {
         System.out.println("Creating MessageService bean");
-        this.chatMessages = new ArrayList<>();
+        //this.chatMessages = new ArrayList<>(); not needed kept in mapper
     }
 
     public void addMessage(ChatForm chatForm) {
@@ -48,10 +38,11 @@ public class MessageService {
                 newMessage.setMessage(chatForm.getMessageText().toLowerCase());
                 break;
         }
-        this.chatMessages.add(newMessage);
+        //this.chatMessages.add(newMessage);
+        chatMessageMapper.insert(newMessage);
     }
 
     public List<ChatMessage> getChatMessages() {
-        return chatMessages;
+        return chatMessageMapper.getAllMessages();
     }
 }

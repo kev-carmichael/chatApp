@@ -1,6 +1,7 @@
 package com.udacity.jwdnd.c1.review.model;
 
 public class ChatMessage {
+    private Integer messageId;
     private String username;
     private String message;
 
