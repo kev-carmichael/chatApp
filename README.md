@@ -1,5 +1,5 @@
 # Chat App
-A simple full stack chat app utilising Spring Boot with Thymeleaf/HTML front end, MyBatis for data storage, Spring Security and Java for the back end.
+A simple full stack chat app utilising Spring Boot with Thymeleaf/HTML front end, Spring Security, MyBatis for data storage and Java for the back end.
 
 >Run review\src\main\java\com\udacity\jwdnd\c1\review\ReviewApplication.java
 >
