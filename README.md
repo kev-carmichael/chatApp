@@ -1,5 +1,5 @@
 # Chat App
-A simple full-stack chat app utilising SpringBoot with Thymeleaf/HTML frontend and Java backend.
+A simple full-stack chat app utilising SpringBoot with Thymeleaf/HTML front end and Java back end.
 
 >Run review\src\main\java\com\udacity\jwdnd\c1\review\ReviewApplication.java
 
